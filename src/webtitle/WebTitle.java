@@ -18,7 +18,7 @@ public class WebTitle {
             String content = scanner.next();
             scanner.close();
             content = content.replaceAll("\\n+", "");
-            Pattern p = Pattern.compile("newsdetail\">(.*?)</a>");
+            Pattern p = Pattern.compile("<a href.*?title.*?class.*?data-newstype.*?>(.*?)</a>");
             Matcher m = p.matcher(content);
             while (m.find()) {
                 System.out.println(m.group(1));
